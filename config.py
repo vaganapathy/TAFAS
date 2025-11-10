@@ -9,7 +9,7 @@ _C.SEED = 0
 _C.NUM_GPUS = 8
 _C.VISIBLE_DEVICES = 0
 # directory to save result txt file
-_C.RESULT_DIR = 'results/'
+_C.RESULT_DIR = '/content/drive/My Drive/DynaTTA/results'
 _C.NORMALIZE = 'NST'
 
 _C.DATA_LOADER = CN()
@@ -18,16 +18,16 @@ _C.DATA_LOADER.PIN_MEMORY = True
 _C.DATA_LOADER.DROP_LAST = True
 
 _C.DATA = CN()
-_C.DATA.BASE_DIR = 'data/'
+_C.DATA.BASE_DIR = '/content/drive/My Drive/tsdb-data/'
 _C.DATA.NAME = 'weather'
-_C.DATA.N_VAR = 21
+_C.DATA.N_VAR = 17
 _C.DATA.SEQ_LEN = 96
 _C.DATA.LABEL_LEN = 48
 _C.DATA.PRED_LEN = 96
 _C.DATA.FEATURES = 'M'
 _C.DATA.TIMEENC = 0
 _C.DATA.FREQ = 'h'
-_C.DATA.SCALE = "standard"  # standard, min-max
+_C.DATA.SCALE = "min-max"  # standard, min-max
 _C.DATA.TRAIN_RATIO = 0.7
 _C.DATA.TEST_RATIO = 0.2
 _C.DATA.DATE_IDX = 0
@@ -42,7 +42,7 @@ _C.TRAIN.BATCH_SIZE = 256
 _C.TRAIN.SHUFFLE = True
 _C.TRAIN.DROP_LAST = True
 # directory to save checkpoints
-_C.TRAIN.CHECKPOINT_DIR = 'results/'
+_C.TRAIN.CHECKPOINT_DIR = '/content/drive/My Drive/DynaTTA/results/'
 # path to checkpoint to resume training
 _C.TRAIN.RESUME = ''
 # epoch period to evaluate on a validation set
@@ -67,7 +67,7 @@ _C.TEST.SHUFFLE = False
 _C.TEST.DROP_LAST = False
 
 _C.TTA = CN()
-_C.TTA.ENABLE = False
+_C.TTA.ENABLE = True
 _C.TTA.MODULE_NAMES_TO_ADAPT = 'cali'  # all, norm, etc
 _C.TTA.LOG = False
 _C.TTA.SOLVER = CN()
@@ -123,9 +123,9 @@ _C.NORM_MODULE.ENABLE = False  # NST
 _C.NORM_MODULE.NAME = 'SAN'  # SAN, RevIN, DishTS
 
 _C.SAN = CN()
-_C.SAN.RESULT_DIR = 'results/station/'
+_C.SAN.RESULT_DIR = '/content/drive/My Drive/DynaTTA/results/station/'
 _C.SAN.TRAIN = CN()
-_C.SAN.TRAIN.CHECKPOINT_DIR = 'results/station/'
+_C.SAN.TRAIN.CHECKPOINT_DIR = '/content/drive/My Drive/DynaTTA/results/station/'
 _C.SAN.SOLVER = CN()
 _C.SAN.SOLVER.OPTIMIZING_METHOD = 'adam'
 _C.SAN.SOLVER.START_EPOCH = 0
@@ -144,15 +144,15 @@ _C.SAN.SOLVER.WARMUP_START_LR = 0.001
 _C.REVIN = CN()
 _C.REVIN.EPS = 1e-5
 _C.REVIN.AFFINE = True
-_C.REVIN.RESULT_DIR = 'results/revin/'
+_C.REVIN.RESULT_DIR = '/content/drive/My Drive/DynaTTA/results/revin/'
 _C.REVIN.TRAIN = CN()
-_C.REVIN.TRAIN.CHECKPOINT_DIR = 'results/revin/'
+_C.REVIN.TRAIN.CHECKPOINT_DIR = '/content/drive/My Drive/DynaTTA/results/revin/'
 
 _C.DISHTS = CN()
 _C.DISHTS.INIT = 'standard'  # standard, avg, uniform
-_C.DISHTS.RESULT_DIR = 'results/dishts/'
+_C.DISHTS.RESULT_DIR = '/content/drive/My Drive/DynaTTA/results/dishts/'
 _C.DISHTS.TRAIN = CN()
-_C.DISHTS.TRAIN.CHECKPOINT_DIR = 'results/dishts/'
+_C.DISHTS.TRAIN.CHECKPOINT_DIR = '/content/drive/My Drive/DynaTTA/results/dishts/'
 
 _C.SOLVER = CN()
 _C.SOLVER.START_EPOCH = 0
