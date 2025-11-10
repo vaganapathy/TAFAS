@@ -474,113 +474,14 @@ def build_dataset(cfg, split):
 
 def update_cfg_from_dataset(cfg: CN, dataset_name: str):
     cfg.DATA.NAME = dataset_name
-    if dataset_name == 'weather':
-        n_var = 21
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 12  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.7
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    elif dataset_name == 'illness':
-        n_var = 7
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 6  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.7
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    elif dataset_name == 'electricity':
-        n_var = 321
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 24  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.7
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    elif dataset_name == 'traffic':
-        n_var = 862
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 24  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.7
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    elif dataset_name == 'exchange_rate':
-        n_var = 8
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 6  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.7
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    elif dataset_name == 'ETTh1':
-        n_var = 7
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 24  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.6
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    elif dataset_name == 'ETTh2':
-        n_var = 7
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 24  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.6
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    elif dataset_name == 'ETTm1':
-        n_var = 7
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 12  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.6
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    elif dataset_name == 'ETTm2':
-        n_var = 7
-        cfg.DATA.N_VAR = n_var
-        cfg.DATA.FEATURES = 'M'
-        cfg.DATA.TARGET_START_IDX = 0
-        cfg.DATA.PERIOD_LEN = 12  #! for SAN
-        cfg.DATA.TRAIN_RATIO = 0.6
-        cfg.DATA.TEST_RATIO = 0.2
-        
-        cfg.MODEL.enc_in = n_var
-        cfg.MODEL.dec_in = n_var
-        cfg.MODEL.c_out = n_var
-    else:
-        raise ValueError
+    n_var = 17
+    cfg.DATA.N_VAR = n_var
+    cfg.DATA.FEATURES = 'M'
+    cfg.DATA.TARGET_START_IDX = 0
+    cfg.DATA.PERIOD_LEN = 12  #! for SAN
+    cfg.DATA.TRAIN_RATIO = 0.7
+    cfg.DATA.TEST_RATIO = 0.2
+    
+    cfg.MODEL.enc_in = n_var
+    cfg.MODEL.dec_in = n_var
+    cfg.MODEL.c_out = n_var
