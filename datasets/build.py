@@ -83,13 +83,14 @@ class ForecastingDataset(Dataset):
         test = data[test_start:test_end]
         
         df_stamp = df_raw[['date']]
+        print(df_stamp.describe)
         df_stamp = pd.to_datetime(
             df_stamp["date"],
             format="mixed",
             utc=True,
             errors="coerce"
         )
-        df_stamp['date'] = df_stamp["date"].dt.tz_localize(None)
+        df_stamp["date"] = df_stamp["date"].dt.tz_localize(None)
         
         if self.timeenc == 0:
             df_stamp['month'] = df_stamp.date.apply(lambda row: row.month, 1)
