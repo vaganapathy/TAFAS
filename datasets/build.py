@@ -84,7 +84,7 @@ class ForecastingDataset(Dataset):
         
         df_stamp = df_raw[['date']]
         print(df_stamp.describe)
-        df_stamp = pd.to_datetime(
+        df_stamp["date"] = pd.to_datetime(
             df_stamp["date"],
             format="mixed",
             utc=True,
