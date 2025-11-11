@@ -23,9 +23,9 @@ def construct_loader(cfg, split):
 
     loader = DataLoader(
         dataset,
-        batch_size=batch_size,
+        batch_size=128,
         shuffle=shuffle,
-        num_workers=0,
+        num_workers=1,
         pin_memory=cfg.DATA_LOADER.PIN_MEMORY,
         drop_last=drop_last,
         persistent_workers=True,
