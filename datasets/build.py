@@ -92,9 +92,6 @@ class ForecastingDataset(Dataset):
         )
         df_stamp["date"] = df_stamp["date"].dt.tz_localize(None)
         
-        # Check for NaN values
-        print("\nNaN values per column:")
-        print(df_stamp.isna().sum())
         print(df_stamp.head(20))
         if self.timeenc == 0:
             df_stamp['month'] = df_stamp.date.apply(lambda row: row.month, 1)
