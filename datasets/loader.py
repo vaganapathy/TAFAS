@@ -27,7 +27,7 @@ def construct_loader(cfg, split):
         shuffle=shuffle,
         num_workers=1,
         pin_memory=cfg.DATA_LOADER.PIN_MEMORY,
-        drop_last=drop_last,
+        drop_last=False,
         persistent_workers=True,
     )
 
