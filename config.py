@@ -67,7 +67,7 @@ _C.TEST.SHUFFLE = False
 _C.TEST.DROP_LAST = False
 
 _C.TTA = CN()
-_C.TTA.ENABLE = True
+_C.TTA.ENABLE = False
 _C.TTA.MODULE_NAMES_TO_ADAPT = 'cali'  # all, norm, etc
 _C.TTA.LOG = False
 _C.TTA.SOLVER = CN()
