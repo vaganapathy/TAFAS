@@ -23,12 +23,11 @@ def construct_loader(cfg, split):
 
     loader = DataLoader(
         dataset,
-        batch_size=128,
+        batch_size=batch_size,
         shuffle=shuffle,
-        num_workers=1,
+        num_workers=cfg.DATA_LOADER.NUM_WORKERS,
         pin_memory=cfg.DATA_LOADER.PIN_MEMORY,
-        drop_last=False,
-        persistent_workers=True,
+        drop_last=drop_last,
     )
 
     return loader
