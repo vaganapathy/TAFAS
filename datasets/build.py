@@ -64,6 +64,7 @@ class ForecastingDataset(Dataset):
     def _split_data(self, df_raw: pd.DataFrame) -> Tuple[ndarray, ndarray, ndarray, ndarray, ndarray, ndarray]:
         assert 0.0 < self.train_ratio < 1.0 and 0.0 < self.test_ratio < 1.0 and self.train_ratio + self.test_ratio <= 1.0
         
+        print(f"Head: {df_raw.head(20)}")
         data = df_raw[df_raw.columns[1:]].values
         train_len = int(len(data) * self.train_ratio)
         test_len = int(len(data) * self.test_ratio)
