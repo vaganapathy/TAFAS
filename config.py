@@ -36,7 +36,7 @@ _C.DATA.PERIOD_LEN = 24  # Used only when SAN is ENABLED
 _C.DATA.STATION_TYPE = 'adaptive'  # Used only when SAN is ENABLED
 
 _C.TRAIN = CN()
-_C.TRAIN.ENABLE = True
+_C.TRAIN.ENABLE = False
 _C.TRAIN.SPLIT = 'train'
 _C.TRAIN.BATCH_SIZE = 256
 _C.TRAIN.SHUFFLE = True
