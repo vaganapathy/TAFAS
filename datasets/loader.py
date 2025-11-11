@@ -25,7 +25,7 @@ def construct_loader(cfg, split):
         dataset,
         batch_size=batch_size,
         shuffle=shuffle,
-        num_workers=cfg.DATA_LOADER.NUM_WORKERS,
+        num_workers=0,
         pin_memory=cfg.DATA_LOADER.PIN_MEMORY,
         drop_last=drop_last,
         persistent_workers=True,
